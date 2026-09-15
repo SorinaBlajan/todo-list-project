@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Today's Tasks</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%232f5d50'/%3E%3Cpath d='m16 33 10 10 22-23' fill='none' stroke='%23fffaf2' stroke-linecap='round' stroke-linejoin='round' stroke-width='7'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="board">
+    <header class="board__header">
+      <h1>Today's Tasks</h1>
+      <p class="board__date" id="today-date"></p>
+    </header>
+
+    <form id="todo-form" class="add-form">
+      <input
+        type="text"
+        id="todo-input"
+        class="add-form__input"
+        placeholder="What needs to be done?"
+        autocomplete="off"
+        maxlength="120"
+      >
+      <button type="submit" class="add-form__button">Add</button>
+    </form>
+
+    <nav class="filters" id="filters">
+      <button class="filters__btn is-active" data-filter="all">All</button>
+      <button class="filters__btn" data-filter="active">Active</button>
+      <button class="filters__btn" data-filter="completed">Completed</button>
+    </nav>
+
+    <ul class="list" id="todo-list"></ul>
+
+    <p class="empty-state" id="empty-state">Nothing here yet. Add your first task above.</p>
+
+    <footer class="board__footer">
+      <span id="items-left">0 items left</span>
+      <button id="clear-completed" class="board__clear">Clear completed</button>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
